@@ -1,0 +1,667 @@
+%TCIDATA{LaTeXparent=0,0,relatorio.tex}
+                      
+                     
+\chapter{Revisão Bibliográfica}\label{CapRevisaoBibliografica}
+
+% Resumo opcional. Comentar se não usar.
+\resumodocapitulo{Resumo opcional.}
+
+\section{Introdução}
+
+Como mencionado no Capítulo \ref{CapIntro}, os estudos de estabilidade em robôs com pernas, em especial de robôs quadrúpedes, começaram em 1968 com os trabalhos de McGhee e Frank com a definição de estabilidade estática \cite{article:mcghee:1968}. Com o passar do tempo, novas definições para a estabilidade estática foram sendo desenvolvidas, ao mesmo tempo que os estudos de estabilidade dinâmica começaram a ser feitos \cite{book}.
+
+Desde então, diversos métodos de controle de estabilidade tem sido trabalhados na construção de robôs	quadrúpedes, desde modelos cinemáticos, utilizando apenas as posições e velocidades do robô, até modelos dinâmicos mais complexos, que analisam as forças e momentos atuantes sobre o robô.
+
+
+
+\section{Estabilidade Estática}
+
+A estabilidade estática tem como principal característica a independência de fatores dinâmicos, isto é, ela não considera a atuação de forças externas, com exceção da gravidade, de momentos resultantes ou de componentes inerciais. Porém, conforme o robô aumenta sua velocidade os efeitos dinâmicos sobre o mesmo passam a ficar cada vez mais relevantes de forma que a estabilidade estática não garante o equilíbrio da máquina. Da mesma forma, o aumento de carga sobre o robô ou a presença de superfícies irregulares ou inclinadas tornam este tipo de controle mais ineficiente.
+
+Contudo, estudar a estabilidade estática ainda é de suma importância no controle de equilíbrio de quadrúpedes, seja para melhor entendimento de todo o escopo deste estudo, seja pra aplicações restritas onde a aplicação da estabilidade estática seja suficiente para cumprir os requisitos propostos.
+
+\subsection{Métodos Geométricos}
+
+Os métodos geométricos utilizam a geometria proveniente da configuração das patas do robô a cada instante para definir a sua estabilidade e o quão perto dele se tornar instável (a margem de estabilidade).
+
+Segundo McGhee e Frank \cite{article:mcghee:1968} um robô movido a patas sobre uma superfície horizontal é estaticamente estável se e somente se a projeção vertical do centro de gravidade (COG) da máquina está dentro do polígono de suporte, onde este é definido como o polígono convexo formado pela conexão das patas em contato com o solo. Podemos observar na Figura \ref{fig:poligonos} alguns possíveis polígonos de suporte formados por um robô quadrúpede durante sua caminhada. Na Figura \ref{fig:poligonos}(a) uma das patas não está em contato com o solo, de forma que o polígono resultante é um triângulo. Na Figura \ref{fig:poligonos}(b), todas as patas estão em contado com o solo, mas as patas 1 e 3 se encontram mais próximas, formando um trapézio. Por fim, na Figura \ref{fig:poligonos}(c), todas as patas estão em contato com o solo mas 1 e 3 estão mais afastadas, formando, dessa forma, um paralelogramo.
+
+Em todos os casos da Figura \ref{fig:poligonos} a projeção do centro de gravidade está dentro do polígono, indicando que o robô encontra-se estaticamente estável.
+
+Além da definição de estabilidade, McGhee e Frank apresentam em \cite{article:mcghee:1968} a definição de margem de estabilidade. Para este caso, ela é definida como a menor distância entre a projeção do COG e qualquer ponto da fronteira do polígono. Dessa forma, por exemplo, a margem de estabilidade da Figura \ref{fig:poligonos}(a) é menor que da Figura \ref{fig:poligonos}(c) pois no primeiro caso a projeção do COG se encontra bem mais próximo de uma das fronteiras do polígono.
+
+
+
+Posteriormente, novas difinições foram feitas para a margem de estabilidade estática baseada neste trabalho de McGhee e Frank \cite{book}. A Margem de Estabilidade Longitudinal ($S_{LSM}$), por exemplo, é definida como a menor distância entre a projeção vertical do COG e a fronteira dianteira ou traseira do polígono de suporte, ou seja, a menor distância deve ser tomada apenas no eixo longitudinal do polígono. Isto é um método que facilita os cálculos da margem de estabilidade.
+
+\begin{figure}[h]
+	\centering
+	\mbox{
+		\subfigure[Uma pata sem contato com o solo]{\includegraphics[width=0.35\textwidth]{Figuras/Poligono1}}\quad\quad
+		\subfigure[Todas as pernas no sobre o solo com patas próximas]{\includegraphics[width=0.4\textwidth]{Figuras/Poligono2}}}
+	\subfigure[Todas as pernas no sobre o solo com patas afastadas]{\includegraphics[width=0.45\textwidth]{Figuras/Poligono3}
+	}
+	\caption{Polígonos de Suporte de um robô quadrúpede}
+	\label{fig:poligonos}
+\end{figure}
+
+Um outro exemplo é a Margem de Estabilidade Longitudinal de Caranguejo ($S_{CLSM}$) onde, ao invés de se considerar o eixo longitudinal, deve-se considerar o eixo de	 direção do movimento do robô. Este método leva em conta a não-idealidade dos veículos, que não necessariamente se locomovem através de seu eixo longitudinal. A Figura \ref{fig:margemlongitudinal} mostra uma representação da diferença das margens Longitudinal e de Caranguejo.
+
+\begin{figure} [t]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figuras/Margemlongitudinal}
+	\caption{Margens de Estabilidade Longitudinal e de Caranguejo}
+	\label{fig:margemlongitudinal}
+\end{figure}
+
+\subsection{Métodos Energéticos}
+
+Os métodos energéticos calculam a energia necessária para tombar o robô para definir sua margem de estabilidade e, consequentemente, se ele se encontra instável ou não.
+
+Proposto em 1985 por Messuri, a Margem de Estabilidade por Energia ($S_{ESM}$) é definida como a energia potencial mínima necessária para tombar o robô ao redor de uma das fronteiras do polígono de suporte \cite{book}. Dessa forma, podemos escrever matematicamente essa relação como:
+
+\begin{eqnarray}
+S_{ESM}  = \min_{i}^{n_s}(mgh_i)
+\end{eqnarray}
+
+Onde $m$ é a massa do robô, $g$ é a gravidade, $i$ denota qual segmento do polígono de suporte é considerado, $n_s$ é o número de pernas de suporte e $h_i$ é a variação da altura do COG durante o tombamento.
+
+É interessante notar que, como este método ainda trata-se de estabilidade estática, apenas a gravidade é considerada e, por isso, para este caso, a energia potencial é a única componente energética que contribuiria para o tombamento do robô.
+
+Em 1998, Hirose \emph{et al.} definiram a Margem de Estabilidade por Energia Normalizada ($S_{NESM}$) como a $S_{ESM}$ normalizada com o peso do robô, de forma que a unidade mantenha-se igual à proposta pelos métodos geométricos (unidade de comprimento). Por conseguinte, a margem normalizada pode escrita como:
+
+\begin{eqnarray}
+S_{NESM} = \frac{S_{ESM}}{mg}  = \min_{i}^{n_s}(h_i)
+\end{eqnarray}
+
+A $S_{NESM}$ tem se mostrado como a mais eficiente medida de margem de estabilidade estática, mas ainda não comporta os efeitos dinâmicos que surgem em aplicações de maiores velocidades ou com distúrbios externos \cite{book}.
+
+\section{Estabilidade Dinâmica}
+
+O estudo da estabilidade dinâmica tem como propósito a modelagem de situações mais concretas existentes em aplicações reais. Desta maneira, a inclusão de efeitos inerciais, forças e momentos externos ao estudo de estabilidade permite ao sistema de locomoção trabalhar com velocidades maiores, em terrenos mais irregulares e com condições mais adversas.
+
+\subsection{Método do Centro de Pressão}
+
+Analogamente ao método geométrico da projeção do centro de gravidade definido para a estabilidade estática, Orin definiu em 1976 o método do Centro de Pressão (COP) \cite{book}. Neste método, define-se como dinamicamente estável o robô cuja projeção do centro de gravidade (COG) ao longo da direção da força resultante agindo sobre o COG se encontra dentro do polígono de suporte. Da mesma maneira que no caso estático, a margem de estabilidade será a menor distância desta projeção e qualquer uma das bordas do polígono.
+
+Esta definição foi modificada posteriormente assim como a sua nomenclatura. Kang \emph{et al.}, em 1997, renomeou o COP como Centro de Massa Efetiva (EMC) e o definiu como o ponto no plano em que o momento resultante é nulo. Esta definição é similar à definição de Ponto de Momento Zero (ZMP) utilizado em robôs bípedes \cite{book}.
+
+\subsection{Margem de Estabilidade Dinâmica}
+
+Quando o robô porventura sofre a ação de um distúrbio suficientemente forte para fazê-lo iniciar um processo de tombamento, algumas patas podem perder o contato com o chão e provocar uma rotação ao redor de um eixo, como pode ser observado na Figura \ref{fig:dinamico1}. Quando isto acontece, o sistema de controle deve gerar uma força resultante $F_{R}$ e um momento resultante $M_{R}$ para poder contrabalancear os distúrbios externos que provocaram o desequilíbrio inicial. Dessa forma, o momento total, $M_i$, gerado através de $F_{R}$ e de $M_{R}$, deve ser suficiente para garantir essa compensação, caso contrário o sistema será considero instável.
+
+
+\begin{figure} [t]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figuras/Dinamico1}
+	\caption{Robô prestes a tombar}
+	\label{fig:dinamico1}
+\end{figure}
+
+Desse modo, Lin e Song, em 1993, definiram como Margem de Estabilidade Dinâmica ($S_{DSM}$) como o menor momento $M_i$ dentre os eixos de rotações possíveis, normalizado com o peso do robô, onde $i$ descreve cada eixo \cite{book}. Portanto, podemos descrever essa relação como:
+
+\begin{eqnarray}
+S_{DSM} = \min\bigg(\frac{M_i}{mg}\bigg) = \min\bigg(\frac{e_i\cdot(F_R \times P_i + M_R)}{mg}\bigg)
+\end{eqnarray}
+
+Onde $P_i$ é o vetor de posição do COG até a i-ésima pata e $e_i$ é o vetor unitário que circunda o polígono de suporte na direção horária. Estes parâmetros podem ser observados com maior clareza na Figura \ref{fig:dinamico1}.
+
+\subsection{Margem Normalizada de Estabilidade Dinâmica por Energia}
+
+Assim como foi feito no caso estático, podemos analisar a estabilidade dinâmica por uma perspectiva energética. Porém, para este modelo, considera-se, além da força gravitacional, forças e momentos aplicados externamente, além da energia cinética representando a inércia do sistema. Do mesmo modo, a Margem Normalizada de Estabilidade Dinâmica por Energia ($S_{NDESM}$) é definida como a menor energia necessária para se tombar o robô ao redor do polígono de suporte. Matematicamente ela é dada por:
+
+\begin{eqnarray}
+S_{NDESM} = \frac{\min(E_i)}{mg}
+\end{eqnarray}
+
+Onde $E_i$ é a energia necessária para se tombar o robô através da i-ésima borda do polígono de suporte. Ela pode ser calculada através da seguinte equação:
+
+\begin{eqnarray}
+E_i = mg|R| (\cos(\phi)-\cos(\varphi))\cos(\Psi)+(F_{RI}\cdot t)|R|\theta + (M_R\cdot e_i)\theta - \frac{1}{2}I_i\omega^2_i
+\end{eqnarray}
+
+Onde $R$ é o vetor ortogonal à i-ésima borda do polígono de suporte que aponta para o COG, $F_{RI}$ é a componente não gravitacional das forças resultantes $F_R$, $I_i$ é o momento de inércia do robô ao redor da i-ésima borda, $\omega_i$ é a velocidade angular do COG , $\Psi$ é o ângulo de inclinação da i-ésima borda do polígono de suporte, $\varphi$ é o ângulo de rotação necessário para posicionar o COG no plano vertical, $\phi$ é o ângulo entre o plano vertical e o plano crítico, $\theta$ é a soma de $\varphi$ e $\phi$, e $t$ é o vetor unitário tangencial à trajetória do COG. A Figura \ref{fig:dinamico2} mostra o esquemático geométrico para a determinação de tais parâmetros.
+
+As seções a seguir apresentam alguns outros métodos dinâmicos para o controle de estabilidade. Eles são considerados dinâmicos por considerarem a aplicação de forças externas e momentos resultantes, porém não utilizam, necessariamente, os métodos de análise de margem de estabilidade como o descrito nesta seção.
+
+\section{Algoritmo de Posicionamento de Pata}
+
+Em 1986, Raibert \emph{et al.} propuseram uma abordagem diferente para o controle de estabilidade de robôs movidos a pernas \cite{article:raibert:1986, article:meng:2015}. O Algoritmo de Posicionamento de Pata (\emph{Foot Placement Algorithm - FPA}) utiliza os algoritmos de robôs com uma perna e os estende para múltiplas pernas através do conceito de perna virtual. Um exemplo de robô com uma perna pode ser visto na Figura \ref{fig:umaperna}. Dessa forma, o controle de equilíbrio pode ser dividido em três partes: altura de pulo, postura do corpo e velocidade direta de corrida. Até os dias atuais, esse conceito é utilizado em robôs como o \emph{BigDog} \cite{article:raibert:0000}.
+
+
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figuras/Dinamico2}
+	\caption{Esquemático dos parâmetros geométricos durante o tombo}
+	\label{fig:dinamico2}
+\end{figure}
+
+\begin{figure} [t]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figuras/Umaperna}
+	\caption{Robô de uma perna}
+	\label{fig:umaperna}
+\end{figure}
+
+\subsection{Algoritmos de Uma Perna}
+Em robôs de uma perna como o da Figura \ref{fig:umaperna}, o sistema é dividido em corpo e perna, com um quadril tipo dobradiça separando-os. Um atuador gera um torque no quadril e outro proporciona movimento axial na perna. Uma mola é adicionada em série com o atuador axial de modo que o sistema de controle possa excitar o sistema massa-mola gerando o movimento desejado. Dessa forma, podemos dividir o controle de equilíbrio em três:
+
+\paragraph{Altura de Pulo:} O sistema de controle entrega um impulso vertical, através do atuador axial, regulando a altura que a máquina chega. Dessa forma, pode-se regular a amplitude do movimento e, consequentemente, manter o ciclo de oscilação governado pelo sistema massa-mola. Assim, parte da energia para cada salto é recuperada pela mola.
+
+\paragraph{Postura do Corpo:} O sistema de controle gera um torque sobre o quadril (entre o corpo e a perna) durante a fase de contato com o solo para manter o corpo numa posição ereta. O torque aplicado será dado por:
+
+\begin{eqnarray}
+\tau = -k_p(\phi-\phi_d) - k_v(\dot{\phi})
+\end{eqnarray}
+
+Onde $\tau$ é o torque aplicado na dobradiça do quadril, $k_p$ e $k_v$ são ganhos, $\phi$ é a inclinação do corpo, $\phi_d$ é a inclinação desejada do corpo e $\dot{\phi}$ é a taxa de variação da inclinação do corpo.
+
+\paragraph{Velocidade Direta de Corrida:} Durante a fase de voo, o sistema de controle manipula a posição que a pata irá atingir o solo possibilitando, dessa forma, o controle da velocidade de corrida. Definindo \emph{CG Print} como o conjunto de pontos no chão por quais o centro de massa do corpo irá passar durante o contato com o solo podemos identificar que, se a pata pousar no centro do \emph{CG Print} (o chamado ponto neutro), não haverá aceleração. Do contrário, um posicionamento da pata após o ponto neutro irá causar uma desaceleração e, com a pata posicionada antes do ponto neutro, o robô sofrerá uma aceleração. Podemos observar uma imagem do \emph{CG Print} na Figura \ref{fig:cgprint}. Esta relação pode ser descrita pela seguinte equação:
+
+\begin{eqnarray} \label{eq:onelegged}
+x_f = \frac{\dot{x}T_S}{2} + k_{\dot{x}}(\dot{x}-\dot{x_d})
+\end{eqnarray}
+
+Onde $x_f$ é o posicionamento do pé na direção do movimento, com relação à projeção do centro de gravidade, $\dot{x}$ é a velocidade atual do movimento, $\dot{x_d}$ é a velocidade desejada, $T_S$ é a duração do período de suporte (enquanto a pata ainda está em contato com o solo) e $k_{\dot{x}}$ é um ganho de velocidade.
+
+\begin{figure} [b]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figuras/CGPrint}
+	\caption{\emph{CG Print} de um robô de uma perna}
+	\label{fig:cgprint}
+\end{figure}
+
+Obtido $x_f$, uma transformação cinemática calcula o ângulo que a junta deve fornecer para atingir tal posição.
+
+\subsection{Marcha de uma pata}
+
+Considerando um robô com mais de uma pata, podemos definir como Marcha de uma Pata (\emph{One foot gait}) como uma marcha em que apenas uma perna oferece suporte por vez e que as fases de suporte e de voo ocorrem de forma alternada. Para o caso de quadrúpedes, por exemplo, é necessário que o sistema de controle alterne as patas a serem utilizadas de forma que a perna atualmente em contato com o solo proporcione o impulso vertical para manter o movimento enquanto sua respectiva dobradiça providencia o torque para correção da postura e a próxima pata se prepara para aterrissar no local adequado à velocidade desejada. Dessa forma, o sistema estaria provendo as três parte do controle.
+
+O problema que surge com esta configuração é que as pernas devem estar muito próximas do ponto neutro, o que, além de dificultar o design do robô, pode causar interferências de uma perna com outra. A solução adotada por Raibert \emph{et al.}, foi de utilizar o conceito de pernas virtuais.
+
+\subsection{Pernas Virtuais}
+
+O conceito de pernas virtuais trata-se da coordenação de pares de pernas funcionando ao mesmo tempo de forma que pode-se representar tal par como uma perna equivalente. O par de pernas e a perna virtual exercem a mesma força e momento sobre o corpo, portanto, ambas as configurações geram os mesmos efeitos sobre este. A Figura \ref{fig:pernasvirtuais} demonstra a representação de um par de pernas em uma perna virtual.
+
+\begin{figure} [b]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figuras/PernasVirtuais}
+	\caption{Perna Virtual}
+	\label{fig:pernasvirtuais}
+\end{figure}
+
+Nos quadrúpedes, a coordenação de pares de pernas podem ser feitas em três diferentes maneiras: pernas diagonais, gerando o movimento conhecido como trote, pernas laterais, gerando o passo e pernas traseiras e dianteiras, gerando o salto. Podemos ver na Figura \ref{fig:pernasvirtuais2} as pernas virtuais equivalentes para cada tipo de marcha.
+
+\begin{figure} [t]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figuras/PernasVirtuais2}
+	\caption{Pernas virtuais para cada marcha}
+	\label{fig:pernasvirtuais2}
+\end{figure}
+
+Por conseguinte, utilizando o conceito de pernas virtuais, podemos estender a equação \ref{eq:onelegged} para o movimento de quadrupedes que, por sua vez, possuem duas pernas virtuais e podem se mover em duas dimensões, obtendo, dessa forma:
+
+\begin{eqnarray}
+x_{f,d} = \frac{\dot{x}T_S}{2} + k_{\dot{x}}(\dot{x}-\dot{x_d})\\
+y_{f,d} = \frac{\dot{y}T_S}{2} + k_{\dot{y}}(\dot{y}-\dot{y_d})
+\end{eqnarray}
+
+Onde $x_{f,d}$ e $y_{f,d}$ são os posicionamentos das patas virtuais na direção de cada dimensão, com relação à projeção do centro de gravidade, $\dot{x}$ e $\dot{y}$ são as velocidades atuais do movimento, $\dot{x_d}$ e $\dot{y_d}$ são as velocidades desejadas, $T_S$ é a duração do período de suporte (enquanto a pata ainda está em contato com o solo) e $k_{\dot{x}}$ e $k_{\dot{y}}$ são ganhos de velocidade.
+
+Para controlar a postura do corpo, o sistema atua nos ângulos de rolagem e arfagem aplicando torques sobre os quadris virtuais durante o período de suporte usando servos lineares, através da seguinte equação:
+
+\begin{eqnarray}
+u_x = -k_{p,x}(\phi_P-\phi_{P,d}) - k_{v,x}(\dot{\phi_P}) - k_{f,x}(f_x)\\
+u_y = -k_{p,y}(\phi_R-\phi_{R,d}) - k_{v,y}(\dot{\phi_R}) - k_{f,y}(f_y)
+\end{eqnarray}
+
+Onde $u_x$ e $u_y$ são os sinais de saída dos atuadores, $\phi_P$ e $\phi_R$ são os ângulos de arfagem e rolagem, respectivamente, $\phi_{P,d}$ e $\phi_{R,d}$ são os ângulos desejados de arfagem e rolagem, respectivamente, $f_x$ e $f_y$ são as forças entregues pelos atuadores do quadril e $k_p$, $k_v$ e $k_f$ são ganhos.
+
+\subsection{Exemplo de Aplicação}
+
+Este modelo já foi utilizado na modelagem de robôs quadrúpedes de diversas maneiras \cite{article:meng:2015} e um exemplo pode ser encontrado nos trabalhos de Li \emph{et al.} \cite{article:li:2014}. Nestes, os modelos de Raibert são utilizados em conjunto com o modelo do Pêndulo Invertido com Massa-Mola (\emph{Spring Loaded Inverted Pendulum}) para poder obter mais detalhes dinâmicos, como por exemplo, para robôs com 6 graus de liberdade. Ao fazer isso, pode-se aumentar a robustez do trote e suavizar e estabilizar a corrida do quadrúpede. A Figura \ref{fig:slip} mostra diversas vistas do modelo deste robô.
+
+\begin{figure} [t]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figuras/SLIP}
+	\caption{Vistas do quadrúpede com 6 graus de liberdade}
+	\label{fig:slip}
+\end{figure}
+
+Assim como em \cite{article:raibert:1986} o modelo proposto em \cite{article:li:2014} utiliza o conceito de pernas virtuais para implementar uma marcha de trote (pernas diagonais se movimentando em pares) atuando, virtualmente, como um bípede. Neste caso, o modelo dinâmico utilizado, baseado no modelo SLIP, pode ser descrito através das equações:
+
+\begin{eqnarray}
+M\ddot{r} + K(r-r_0) - Mr\dot{\theta^2} = -Mg\cos\theta\\
+\frac{\mathrm d}{\mathrm d t} \left(Mr^2 \dot{\theta} \right) = Mgr\sin\theta
+\end{eqnarray}
+
+Onde $M$ é a massa do corpo, $K$ é o coeficiente elástico da mola, $r$ é o comprimento da perna, $r_0$ é o comprimento inicial da perna, $\theta$ é o ângulo em relação ao plano vertical, $g$ é a gravidade e $\dot{\theta}$ é a velocidade angular da perna. O modelo utilizando para determinação de tais parâmetros pode ser visto na Figura \ref{fig:slip2}.
+
+\begin{figure} [t]
+	\centering
+	\includegraphics[width=0.3\textwidth]{Figuras/SLIP2}
+	\caption{Modelo SLIP}
+	\label{fig:slip2}
+\end{figure}
+
+Por sua vez, o algoritmo de controle utilizado para regular a corrida e o salto é uma variação do modelo de Raibert e é dado da seguinte forma:
+
+\begin{eqnarray} 
+\theta_s = \arcsin(\frac{v_xT_s}{2l_0}) + k_p(v_x-v_{xt}) + k_i\sum_{step}(v_x-v_{xt}) \label{eq:slip2}\\
+l_u = l_{u0} + C(v_z-v_{zt}) \label{eq:slip3}
+\end{eqnarray}
+
+Onde $\theta_s$ é o ângulo de toque (complemento de $\theta$, da Figura \ref{fig:slip2}), $l_u$ é o comprimento do atuador, $T_s$ é o período da fase de suporte, $l_0$ é o comprimento inicial da perna, $v_x$ e $v_z$ são as velocidades na direção do movimento e na direção vertical, respectivamente, $v_{xt}$ e $v_{zt}$ são as velocidades desejadas, $l_{u0}$ é o comprimento inicial do atuador e $k_p$, $k_i$ e $C$ são parâmetros constantes.
+
+Dessa forma, o algoritmo de controle utiliza a equação \ref{eq:slip2} para determinar os ângulos que devem ser aplicados em cada junta para proporcionar o movimento lateral e direto desejado. A equação \ref{eq:slip3}, por sus vez, determina a ação dos atuadores axiais.
+
+Já o controle dos ângulos de rolagem e arfagem utiliza um modelo simplificado como o da Figura \ref{fig:slip3}. Este modelo pode ser descrito por:
+
+
+\begin{eqnarray}
+J\ddot{\beta} = \tau_b + \tau_f + (F_2 - F_1)\cdot l_1/2
+\end{eqnarray}
+
+Onde J é o momento de inércia do torso do robô, $\beta$ é o ângulo de postura, $\ddot{\beta}$ é a aceleração angular de $\beta$, $F_1$ e $F_2$ são as forças de contato das patas, $l_1$ é a distância entre as duas juntas e $\tau_b$ e $\tau_f$ são os torque de saída das juntas.
+
+Pode-se considerar o corpo como um sistema amortecido com mola de forma que o algoritmo de controle pode ser descrito como:
+
+\begin{eqnarray}
+J\ddot{\beta} = -k_{p\beta}(\beta-\beta_d) - k_{d\beta}\dot{\beta}
+\end{eqnarray}
+
+Onde $k_{p\beta}$ é a rigidez da mola equivalente, $k_{d\beta}$ é o amortecimento e $\beta_d$ é o ângulo desejado. Este configura um sistema de segunda ordem e é dado pela seguinte função de transferência:
+
+\begin{eqnarray}
+\frac{\beta(s)}{\beta_d(s)} = \frac{\omega_n}{s^2+2\xi\omega_n s+\omega_n^2} = \frac{2k_{p\beta}/J}{s^2+2k_{d\beta}s/J + 2k_{p\beta}/J}
+\end{eqnarray}
+
+Onde $\xi$ é a razão de amortecimento e $\omega_n$ é a frequência natural do sistema de segunda ordem.
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figuras/SLIP3}
+	\caption{Modelo para controle de arfagem e rolagem}
+	\label{fig:slip3}
+\end{figure}
+
+
+\section{Controle de Balanço Dinâmico}
+Em 2015, Meng \emph{et al.} realizaram um estudo para analisar o balanceamento de um robô quadrúpede quando este se encontra apoiado em duas pernas diagonais \cite{article:meng:2015}. Analisando robôs previamente construídos os autores deste estudo compreenderam que, para que estes veículos permanecessem estáveis, eles tinham que manter o movimento (como no desenvolvimento de Raibert) ou estaticamente sobre as quatro patas. Com isso em mente, foi proposto um modelo de controle dinâmico para este tipo de equilíbrio.
+
+Em um quadrúpede apoiado em suas pernas diagonais podemos assumir que as pernas sem contato com o solo fazem parte do corpo, facilitando a compreensão e desenvolvimento das equações. Dessa forma, o modelo utilizado tem o formato presente da Figura \ref{fig:balanco1}
+
+\begin{figure} [t]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figuras/Balanco1}
+	\caption{Modelo de quadrúpede apoiado em pernas diagonais}
+	\label{fig:balanco1}
+\end{figure}
+
+Se $\theta_{corpo}$ é o ângulo de arfagem, $\theta_{FS}$ e $\theta_{HS}$ são, respectivamente, os ângulos da perna dianteira e traseira e todos podem ser medidos através de sensores, podemos definir uma relação da seguinte forma:
+
+\begin{eqnarray}
+\theta_F = \theta_{FS} - \theta_{corpo}\\
+\theta_H = \theta_{HS} - \theta_{corpo}
+\end{eqnarray}
+
+Onde $\theta_F$ é o ângulo entre a perna dianteira e a direção da gravidade e $\theta_H$ é o ângulo entre a perna traseira e a direção da gravidade. Esta relação pode ser exemplificada pela Figura \ref{fig:balanco2}.
+
+
+
+O modelo dinâmico utilizado é baseado na equação de Lagrange, uma alternativa à Lei de Newton particularmente conveniente para sistemas com vários graus de liberdade ou com sistema de coordenadas muito complexo. Ela é dada por:
+
+\begin{eqnarray}
+\frac{\mathrm d}{\mathrm d t} \left(\frac{\partial L}{\partial \dot{q}} \right) - \frac{\partial L}{\partial q} = S\tau
+\end{eqnarray}
+
+Onde, para este caso, $q = \begin{bmatrix}
+\theta_F & \theta_H & \theta_{corpo}
+\end{bmatrix}$, $S = \begin{bmatrix}
+1 & 0 & -1 \\ 0 & 1 & -1
+\end{bmatrix}^T$ e $\tau = \begin{bmatrix}
+\tau_F \\ \tau_H
+\end{bmatrix}$ sendo que $\tau_F$ e $\tau_H$ são os torques exercidos pelo atuador dianteiro e traseiro, respectivamente. 
+
+Dessa forma, o controle de balanço para este modelo será realizado com base na seguinte definição de variáveis de estado: $X = \begin{bmatrix}
+\theta_F & \dot{\theta}_F & \theta_H & \dot{\theta}_H & \theta_{corpo} & \dot{\theta}_{corpo}
+\end{bmatrix}^T$. Assim, a equação dinâmica linearizada pode ser dada por $\dot{X} = AX + B\tau$ e o estado de realimentação, baseado em Regulador Quadrático Linear (RQL) pode ser obtido por $\tau = -KX$. Dessa forma, a estrutura de controle pode ser arranjada conforme a Figura \ref{fig:balanco3}.
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figuras/Balanco2}
+	\caption{Modelo das relações de ângulo entre perna e corpo}
+	\label{fig:balanco2}
+\end{figure}
+
+
+\begin{figure} [b]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figuras/Balanco3}
+	\caption{Estrutura do sistema de controle}
+	\label{fig:balanco3}
+\end{figure}
+
+\section{Razão de Aterrissagem em Acordo}
+Uma forma alternativa de mensurar a estabilidade dinâmica em robôs quadrúpedes foi proposta em 2009 por Won \emph{et al.}, denominada Razão de Aterrissagem em Acordo (\emph{Landing Accordance Ration - LAR}) \cite{article:won:2009}.
+
+Em uma marcha quadrúpede do tipo trote os membros diagonalmente dispostos se movem em pares, idealmente em sincronia, como pode ser exemplificado graficamente pela Figura \ref{fig:lar}. Onde LF e RF referem-se, respectivamente, às pernas esquerda e direita da frente enquanto que LH e RH referem-se, respectivamente, às pernas esquerda e direita da parte traseira do robô. O gráfico mostra quais pernas estão em contato com o solo em função do tempo.
+
+\begin{figure} [t]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figuras/LAR}
+	\caption{Sincronia em marcha quadrúpede}
+	\label{fig:lar}
+\end{figure}
+
+No entanto, durante a ação real do robô, pode haver um desacordo entre os pares de pernas de modo que as patas não se encontrem com o solo ao mesmo tempo como pode ser exemplificado pela Figura \ref{fig:lar2}. Onde $t_{td}$ é o tempo que um par de pernas fica dessincronizado para tocar o solo e $t_{lo}$ é o tempo de desacordo para um par de pernas sair do chão.
+
+\begin{figure} [b]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figuras/LAR2}
+	\caption{Representação da Dessincronização das Pernas}
+	\label{fig:lar2}
+\end{figure}
+
+Dessa forma, sabendo que em marchas tipo trote estáveis a aterrissagem deve ser bem sincronizada definiu-se a Razão de Aterrissagem em Acordo (LAR) como:
+
+\begin{eqnarray}
+\lambda = \frac{t - t_{td}}{t}
+\end{eqnarray}
+
+Onde $\lambda$ representa o LAR e $t$ é o período de suporte, ou seja, o tempo que aquele par de pernas fica em contato com o solo.
+
+\subsection{Controle e Planejamento de Marcha}
+O controle é feito baseado nas forças de reação em cada pata. Cada força, por sua vez, é dividida em uma componente para a geração da trajetória de caminhada ($f_{vsd}$) e outra para o equilíbrio dinâmico ($f_{bal}$). Dessa forma o torque que deve ser exercido é dado por:
+
+\begin{eqnarray}
+\tau = J^T(f_{vsd}+f_{bal}\hat{k})
+\end{eqnarray} 
+
+Onde $J^T$ é a transposta da matriz Jacobiana dos pontos finais de cada pata em relação aos ângulos das juntas. O cálculo dessa matriz será melhor abordada nas seções seguintes. Já $\hat{k}$ refere-se ao vetor unitário na direção vertical.
+
+O sistema de controle, dessa forma, pode ser implementado conforme o diagrama de blocos da Figura \ref{fig:lar3}.
+
+\begin{figure} [t]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figuras/LAR3}
+	\caption{Diagrama de Blocos do Sistema de Controle}
+	\label{fig:lar3}
+\end{figure}
+
+\begin{figure}[b]
+	\centering
+	\mbox{
+	\subfigure[Sistemas de coordenadas e ângulos adotados]{\includegraphics[width=0.35\textwidth]{Figuras/LAR4a}}\quad\quad
+	\subfigure[Forças e momentos atuantes no quadrúpede]{\includegraphics[width=0.32\textwidth]{Figuras/LAR4b}}}
+	\caption{Parâmetros de um quadrúpede em instabilidade}
+	\label{fig:lar4}
+\end{figure}
+
+Adotando o sistema de coordenada e ângulos conforme o mostrado na Figura \ref{fig:lar4}(a) podemos estabelecer as relações necessárias para os cálculos da dinâmica a ser controlada. A ideia do controle é redistribuir os torques aplicados de modo que o robô possa recuperar a postura corporal quando sofre um momento de instabilidade. Conforme ilustrado pela Figura \ref{fig:lar4}(b) as forças de reação exercídas sobre as patas do quadrúpede geram um momento diferente de zero levando o robô à instabilidade. Este momento irá causar erros nos ângulos de rolagem e arfagem assim como em suas velocidades. Dessa forma, o sistema de controle pode ser modelado como um sistema de mola amortecido da seguinte forma:
+
+\begin{eqnarray}
+\tau_{\phi} = k_{p,x}\Delta\phi + k_{d,x}\Delta\dot{\phi}\\
+\tau_{\theta} = -(k_{p,y}\Delta\theta + k_{d,y}\Delta\dot{\theta})
+\end{eqnarray}
+
+Onde $\tau_{\phi}$ e $\tau_{\theta}$ são os torques que devem ser aplicados para corrigir, respectivamente, os ângulos de rolagem e arfagem, $\Delta \phi$ e $\Delta \theta$ são os erros associados ao movimento de rolagem e arfagem, respectivamente, ou seja, o quanto eles diferem da situação de estabilidade. Por fim, $k_{p,x}$, $k_{p,y}$, $k_{d,x}$ e $k_{d,y}$ são ganhos.
+
+Portanto a componente de força associada ao controle de equilíbrio do quadrúpede será dado pela soma das forças que gerarão o torque acima descrito. Dessa forma:
+
+\begin{eqnarray}
+f_{bal} = f_{\phi,l} + f_{\theta,l} = \frac{k_{p,x}\Delta\phi + k_{d,x}\Delta\dot{\phi}}{r_{y,l}} - \frac{k_{p,y}\Delta\theta + k_{d,y}\Delta\dot{\theta}}{r_{x,l}}
+\end{eqnarray}
+
+Onde $f_{\phi,l}$ e $f_{\theta,l}$ são as forças de reação para compensar os ângulos de rolagem e arfagem, respectivamente, $r_{x,l}$ e $r_{y,l}$ são as componentes x e y, respectivamente, do vetor que vai do centro de massa do robô até a pata de índice $l$.
+
+Por fim, um algoritmo é criado utilizando a medição do LAR para determinar a trajetória de caminhada que compensa a instabilidade do robô. Tal algoritmo tem a seguinte forma: caso o valor do LAR diminua procura-se a pata que está em desacordo, o controle de postura é acionado para corrigir a instabilidade, caso o LAR não tenha aumentado, retorna-se para a busca pela pata em desacordo, caso o LAR tenha aumentado o algoritmo termina. Este processo pode ser descrito pelo diagrama mostrado na Figura \ref{fig:lar5}.
+
+\begin{figure} [t]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figuras/LAR5}
+	\caption{Algoritmo para controle de estabilidade utilizando o LAR}
+	\label{fig:lar5}
+\end{figure}
+
+\section{Modelo Cinemático e Cinemático Inverso}
+
+O modelo cinemático e cinemático inverso são formas de relacionar as velocidades das juntas de cada perna com a posição da pata, o chamado efetuador final (\emph{end effector}) \cite{tcc:souto:2007}. Nestes modelos não são considerados forças nem momentos e são bastante úteis para o controle de quadrúpedes, uma vez que, podendo relacionar juntas com efetuadores finais, podemos controlar de forma precisa a posição dos atuadores rotacionais para gerar a posição de pata desejada. No entanto, para compreender estes modelos, deve-se, primeiramente analisar o modelo geométrico.
+
+\subsection{Modelo Geométrico}
+
+Considere dois sistemas de coordenadas, $X_1 \times Y_1 \times Z_1$ e $X_0 \times Y_0 \times Z_0$ ambos com a origem no mesmo ponto mas rotacionados entre si. Se $p_1$ é a representação de um determinado ponto em $X_1 \times Y_1 \times Z_1$, podemos representá-lo em $X_0 \times Y_0 \times Z_0$ atráves da seguinte matrix de rotação:
+
+\begin{eqnarray}
+R_1^0 = \begin{bmatrix}
+x_1 \cdot x_0 & y_1 \cdot x_0 & z_1 \cdot x_0 \\ x_1 \cdot y_0 & y_1 \cdot y_0 & z_1 \cdot y_0 \\ x_1 \cdot z_0 & y_1 \cdot z_0 & z_1 \cdot z_0
+\end{bmatrix}
+\end{eqnarray}
+
+Onde $x_0$, $y_0$ e $z_0$ são vetores unitário referentes ao sistema de coordenadas $X_0 \times Y_0 \times Z_0$ e $x_1$, $y_1$ e $z_1$ são vetores unitários referentes ao sistema de coordenadas $X_1 \times Y_1 \times Z_1$. Dessa forma, a representação rotacionada, $p_0$, será dada por:
+
+\begin{eqnarray}
+p_0 = R_1^0 \cdot p_1
+\end{eqnarray}
+
+Agora, considere que os dois sistemas de coordenadas referidos acima se encontram com a mesma orientação, ou seja $R_1^0 = I$, onde $I$ é a matriz identidade, mas transladados entre si. Podemos representar o ponto $p_1$ no sistema de coordenadas  $X_0 \times Y_0 \times Z_0$ como:
+
+\begin{eqnarray}
+p_0 = p_1 + d_1^0
+\end{eqnarray}
+
+Onde $d_1^0$ é o vetor que vai da origem $O_0$ até a origem $O_1$ de cada sistema de coordenadas.
+
+\subsubsection{Tranformação Homogênia}
+Um ponto $p = \begin{bmatrix}
+p_x & p_y & p_z
+\end{bmatrix}^T$ pode ser descrito em coordenadas homogênas da seguinte forma
+
+\begin{eqnarray}
+\tilde{p} = \begin{bmatrix}
+\tilde{p_x} \\ \tilde{p_y} \\ \tilde{p_z} \\ \omega
+\end{bmatrix}
+\end{eqnarray}
+
+Onde $p_x = \frac{\tilde{p}_x}{\omega}$, $p_y = \frac{\tilde{p}_y}{\omega}$ e $p_z = \frac{\tilde{p}_z}{\omega}$. A variável $\omega$ é um fator escalar que, para este caso, será considerado como unitário.
+
+Isto posto, podemos unificar as relações de rotação e translação em uma única transformação homogênea, representada pela seguinte matriz:
+
+\begin{eqnarray}
+H = \begin{bmatrix}
+R & d \\ 0_{1\times 3} & 1
+\end{bmatrix}
+\end{eqnarray}
+
+Onde $R$ é a matriz de rotação, $d$ é o vetor de translação e $0_{1 \times 3}$ é o vetor linha $\begin{bmatrix}
+0 & 0 & 0
+\end{bmatrix}$.	Portanto, uma transformação homogênea, composta por rotação e translação, de um sistema de coordenadas $S_1$ para um sistema de coordenadas $S_0$ é dada por:
+
+\begin{eqnarray}
+\tilde{p}_0 = H_1^0 \tilde{p}_1
+\end{eqnarray}
+
+Podemos utilizar, ainda, uma notação simplificada $H_i$ ($i\in \mathbb{Z}$) para representar uma transformação homogênea do sistema de coordenadas $S_i$ para o sistema de coordenadas $S_{i-1}$.
+
+\subsubsection{Modelo Geométrico em Robôs Manipuladores}
+O modelo geométrico consiste na aquisição das posições dos efetuadores finais (neste caso, das patas do robô) em função das variáveis das juntas.
+
+Considere que a matriz $H_m^0 (q,\lambda)$ representa uma transformação homogênea que possibilita a aquisição das posições e orientações de um efetuador com $m$ graus de liberdade em função do vetor ($q$), das varáveis de juntas e do vetor $\lambda$ composto pelas dimensões físicas do robô. Dessa forma, desconsiderando a orientação do efetuador (assume-se que esta é irrelevante para este estudo), podemos obter sua posição $\xi$, em coordenadas homogêneas, através da seguinte equação:
+
+\begin{eqnarray} \label{eq:geometrico}
+\xi = g(q,\lambda) = H_m^0 \begin{bmatrix}
+0 & 0 & 0 & 1
+\end{bmatrix}
+\end{eqnarray}
+
+Onde g representa uma função do vetor $q$ e dos parâmetros geométricos incluídos em $\lambda$.
+
+\subsection{Modelo Cinemático}
+O modelo cinemático relaciona as velocidades dos efetuadores como uma função das variáveis das juntas. Se derivarmos \ref{eq:geometrico} com respeito ao tempo, obteremos, pela regra da cadeia:
+
+\begin{eqnarray}
+\dot{\xi} = \frac{\partial g}{\partial q} \frac{\mathrm d q}{\mathrm dt}
+\end{eqnarray}
+
+Se definirmos $\frac{\partial g}{\partial q}$ como a matriz Jacobiana $J$, obteremos o modelo cinemático:
+
+\begin{eqnarray} \label{eq:cinematico}
+\dot{\xi} = J\dot{q}
+\end{eqnarray}
+
+De forma que a matriz Jacobiana será dada por:
+
+\begin{eqnarray}
+J = \frac{\partial g(q,\lambda)}{\partial q} = 
+\begin{bmatrix}
+\frac{\partial x }{\partial q_1} & \frac{\partial x }{\partial q_2} & \dots & \frac{\partial x }{\partial q_m} \\
+\frac{\partial y }{\partial q_1} & \frac{\partial y }{\partial q_2} & \dots & \frac{\partial y }{\partial q_m} \\
+\frac{\partial z }{\partial q_1} & \frac{\partial z }{\partial q_2} & \dots & \frac{\partial z }{\partial q_m} 
+\end{bmatrix}
+\end{eqnarray}
+
+\subsection{Modelo Cinemático Inverso}
+O modelo cinemático inverso busca descrever a velocidade das juntas como uma função da velocidade dos efetuadores. Para isso, temos que modificar a equação \ref{eq:cinematico} de modo a isolar $\dot{q}$. Como $J$ não é, necessariamente, uma matriz quadrada, a aplicação de sua inversa não será possível. Para poder fazer isto utilizaremos a matriz pseudo-inversa de $J$ da seguinte forma:
+
+\begin{eqnarray}
+J\dot{q} = \dot{\xi} \nonumber \\
+J^T J \dot{q} = J^T \dot{\xi} \nonumber \\
+\dot{q} = (J^TJ)^-1 J^T\dot{\xi} \nonumber \\
+\dot{q} = J^\dagger \dot{\xi} \label{eq:inversa}
+\end{eqnarray}
+
+Onde $J^\dagger = (J^TJ)^-1 J^T$ é a matriz pseudo-inversa de $J$. 
+
+A utilização da matriz pseudo-inversa, no entanto, pode apresentar graves problemas numéricos, especialmente caso haja singularidades em $J$. Isto decorre do fato que este sistema pode apresentar mais de uma solução, especialmente considerando casos com redundância nos graus de liberdade de um segmento (por exemplo vários atuadores em uma perna). Nestes casos, mais de uma configuração dos efetuadores acarretaria na mesma posição do efetuador final \cite{tcc:souto:2007, article:runbin:2013}. Na seção seguinte será apresentado, além de alguns exemplos de utilização dos modelos cinemático e cinemático inverso, algumas possíveis soluções para este problema.
+
+\subsection{Aplicações}
+
+Este modelo cinemático e cinemático inverso já foi utilizado na modelagem de robôs e esta seção destina-se a exemplificar alguns casos encontrados na literatura.
+
+Em 2016, Featherstone, desenvolveu um método de equilíbrio de robôs baseado em análises de ganho e utilizou o modelo cinemático para calcular o modelo proposto \cite{article:featherstone:2016}. Segundo o autor, uma vez que o controle de equilíbrio tem como objetivo principal controlar o centro de massa mas tem como controle direto apenas os atuadores das juntas, pode-se dizer que, da perspectiva do controlador, a planta tem como entrada o movimento dos atuadores enquanto a saída é modelada como o movimento do centro de massa. Portanto, a performance deste controle pode ser mensurada através do ganho que carateriza essa relação de entrada e saída.
+
+O exemplo utilizado por Featherstone tem como base o modelo da Figura \ref{fig:ganho}, que consiste de duas juntas, uma junto ao chão e uma mais acima.
+
+Dessa forma, $c$ representa o vetor que sai do ponto de contato com o solo até o centro de massa, $\phi$ representa a direção de $c$ em relação ao solo, $q_1$ e $q_2$ são as variáveis das juntas de baixo e de cima, respectivamente, e $b$ é o vetor unitário perpendicular a $c$ na direção do aumento do ângulo $\phi$. 
+
+O sistema de controle deve, para estes fins, levar $c_x$ (a componente de $c$ na direção x) para zero ou fazer com que o ângulo $\phi$ seja $90^o$. Dessa forma, podemos pensar na entrada do sistema como a junta $q_2$ e a saída podendo ser $c_x$ ou $\phi$. Portanto, o ganho associado a este sistema seria dado por:
+
+\begin{eqnarray}
+G_v = \frac{\Delta \dot{c}_x}{\Delta \dot{q}_2}  \\ G_{\omega} = \frac{\Delta \dot{\phi}}{\Delta \dot{q}_2}
+\end{eqnarray}
+
+Onde $G_v$ é denominado de ganho de velocidade linear e $G_{\omega}$ é denominado de ganho de velocidade angular. O símbolo $\Delta$ indica uma variação tipo degrau da subsequente variável.
+
+\begin{figure} [t]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Figuras/ganho1}
+	\caption{Modelo utilizado por Featherstone}
+	\label{fig:ganho}
+\end{figure}
+
+
+O autor aponta três métodos distintos para poder calcular a relação entre $q_2$ e $c_x$, possibilitando, assim, a determinação do ganho $G_v$. Para os propósitos deste estudo daremos foco apenas em um destes métodos, o Jacobiano do centro de massa.
+
+Utilizando a equação \ref{eq:cinematico} podemos mapear diretamente a velocidade do centro de massa com a velocidade das juntas se substituirmos $\xi$ por $c$ e utilizarmos uma matriz $J$ adequada para tal mapeamento. Dessa forma, temos que:
+
+\begin{eqnarray}
+\Delta \dot{c} = J \Delta \dot{q} = J \begin{bmatrix}
+\Delta \dot{q}_1 \\ \Delta \dot{q}_2
+\end{bmatrix}
+\end{eqnarray}
+
+Se considerarmos uma variação unitária em $\dot{q}_2$ e soubermos o valor de $\Delta \dot{q}_1$, podemos calcular o vetor $\dot{c}$	utilizando esta equação. O valor do ganho de velocidade linear será dado, dessa forma, pelo valor da variação da componente x de $c$, $c_x$.
+
+Um exemplo da utilização do modelo cinemático inverso está nos trabalhos de RunBin \emph{et al.} de 2013 \cite{article:runbin:2013}. Estes, especificamente, buscam modelar um sistema de controle para um quadrúpede com graus de liberdade redundantes (4 juntas em cada perna) baseado na cinemática inversa. O modelo do robô desenvolvido pode ser observado na Figura \ref{fig:quadrupededof}.
+
+\begin{figure} [t]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figuras/quadrupededof}
+	\caption{Quadrúpede com total de 16 graus de liberdade}
+	\label{fig:quadrupededof}
+\end{figure}
+
+O controle do quadrúpede, de modo geral, pode ser dividido em duas partes: o controle de marcha e o controle de postura. O primeiro tem como objetivo principal o controle da velocidade direta do robô, de modo que suas saídas são as posições das pernas e do centro de massa. Já os objetivos do controle de postura tem como finalidade principal a resolução do modelo cinemático inverso e tem como saídas os ângulos das juntas ou seus torques. Os dois são combinados utilizando um sistema de realimentação conforme pode ser observado na Figura \ref{fig:realimentacao}. Para o trabalho realizado em \cite{article:runbin:2013} especificamente, utilizou-se os ângulos das juntas (ao invés dos torques) como saída do sistema de controle de postura.
+
+\begin{figure} [b]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figuras/realimentacao}
+	\caption{Sistema de realimentação para controle de marcha e de postura}
+	\label{fig:realimentacao}
+\end{figure}
+
+Para este trabalho, analisaremos apenas o controle de postura, em que é aplicado diretamente o modelo cinemático inverso. Para modelá-lo é preciso, primeiramente, analisar a geometria de cada perna, exposta na Figura \ref{fig:pernaredundante}.
+
+\begin{figure} [t]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figuras/pernaredundante}
+	\caption{Modelo geométrico de uma perna com 4 graus de liberdade}
+	\label{fig:pernaredundante}
+\end{figure}
+
+Esta configuração nos dá:
+
+\begin{eqnarray}
+\begin{bmatrix}
+x \\ z
+\end{bmatrix} = \begin{bmatrix}
+r_1 \cos \theta_1 + r_2 \cos (\theta_1 + \theta_2)+ r_3 \cos (\theta_1 + \theta_2 + \theta_3) \\ r_1 \sin \theta_1 + r_2 \sin (\theta_1 + \theta_2)+ r_3 \sin (\theta_1 + \theta_2 + \theta_3)
+\end{bmatrix}
+\end{eqnarray}
+
+Onde $x$ e $z$ são as componentes das coordenadas do efetuador final, $r_1$, $r_2$ e $r_3$ são segmentos da perna que vão de uma junta até outra e $\theta_1$, $\theta_2$ e $\theta_3$ são os ângulos das juntas. Deste modo, a matrix Jacobiana pode ser calculada como:
+
+\begin{eqnarray}
+J = \begin{bmatrix}
+J_{11} & J_{12} & J_{13} \\ J_{21} & J_{22} & J_{23}
+\end{bmatrix}
+\end{eqnarray}
+
+Onde os parâmetros da primeira linha serão iguais à derivada de $x$ com relação a $\theta_1$, $\theta_2$ e $\theta_3$, nessa ordem, e da segunda linha, iguais à derivada de $z$ com relação a $\theta_1$, $\theta_2$ e $\theta_3$.
+
+Uma vez obtido o Jacobiano, os autores propõe três métodos distintos para calcular os ângulos das juntas. O primeiro é o cálculo da matriz pseudo-inversa, conforme foi abordado anteriormente, culminando na equação \ref{eq:inversa}. A diferença é que do lado direito da equação, os autores adicionam o termo $k(I-J^{\dagger}J*g)$, onde $I$ é a matriz identidade, e $g$ é uma velocidade de auto-locomoção. Este novo termo se trata da solução  da equação linear homogênea enquanto que o primeiro termo é a solução normal mínima.
+
+O segundo método é o da Menor Norma Ponderada (\emph{Weighted least-norm - WLN}). Neste método, utilizado para minimizar a velocidade das juntas, defini-se um novo vetor de velocidade das juntas ($\dot{\theta}_W$), normalizado por uma matriz simétrica e positiva $W$. Então, realiza-se algumas transformações de modo a obter uma nova matriz Jacobiana para o novo sistema. Com isso, o resultado final será dado por:
+
+\begin{eqnarray}
+\dot{\theta}_W = W^{-1}J^T[JW^{-1}J^T]^{-1}\xi
+\end{eqnarray}
+
+Por fim, o terceiro método é proposto e utilizado de modo a estender a matrix Jacobiana atráves de uma função $g$ que minimiza a velocidade das juntas e, dessa forma, tornar $J$ uma matriz quadrada que, então, será invertível.
+
+\section{Controle de Estabilidade Empírico}
+
+Muitos dos trabalhos anteriores utilizam sistemas de realimentação para fazer com que o sistema de controle seja mais robusto e possa convergir mais rapidamente para o valor desejado. Dessa forma, o valor atual da variável (em sua maioria os ângulos das juntas dos atuadores), é utilizado para fornecer o erro associado com o valor desejado para aquela variável. Em geral, um ganho é associado ao erro correspondente para que a saída possa convergir rapidamente.
+
+A ideia desta seção é discutir, com maior foco, sobre este controle, baseado em dados empíricos coletados.
+
+Em 2010, Sousa \emph{et al.}, desenvolveram um sistema de controle de postura baseado na leitura de diversos sensores. Com uma topologia inspirada nas respostas biológicas de animais, os autores deste estudo propuseram um sistema de controle de postura independente do sistema de locomoção, havendo interação apenas quando necessário. O controle de postura seria construído com base em cada estímulo medido e uma resposta adequada seria produzida para corrigir aquela variável. O modelo de controle é integrado com um \emph{Central Pattern Generators (CPG)} para gerar a resposta desejada.
+
+A plataforma quadrúpede AIBO, da Sony (que pode ser vista na Figura \ref{fig:aibo}) é utilizada para o estudo, uma vez que esta possui um acelerômetro de três eixos e um sensor de força em cada pata.
+
+O controle de postura proposto se baseia na integração de diversos aspectos sensoriais e na produção de uma resposta apropriada para cada medição. Pode-se afirmar que cada dado sensorial é a entrada de um sistema específico e que sua saída é uma resposta de modo a corrigir a postura do robô. Ao final, todas as respostas produzidas são integradas para obter o movimento total desejado para a postura. Podemos ver, na Figura \ref{fig:respostassensoriais}, as medições empíricas e suas respectivas respostas.
+
+\begin{figure} [b]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figuras/respostassensoriais}
+	\caption{Modelo geométrico de uma perna com 4 graus de liberdade}
+	\label{fig:respostassensoriais}
+\end{figure}
+
+Desse modo, se $y_{i,p}$ é a resposta de correção total da junta $p$, da perna $i$, então este será a soma de todas as respostas:
+
+\begin{eqnarray}
+y_{i,p} = f_{roll,i,p} + f_{pitch,i,p} + f_{COM,i,p} + f_{force,i,p} + f_{touch,i,p} + f_{disperser,i,p} + f_{reset,i,p}
+\end{eqnarray}
+
+Onde $f$ é a resposta proveniente de cada dado sensorial apresentado na Figura \ref{fig:respostassensoriais}.
+
+Para este estudo, as respostas mais relevantes são as dos ângulos de rolagem e arfagem e são dadas por:
+
+\begin{eqnarray}
+f_{roll,i,p} = k_{roll}f_i(\phi_{roll}) \\
+f_{pitch,i,p} = k_{pitch}f_i(\phi_{pitch})
+\end{eqnarray}
+
+Onde $k_{roll}$ e $k_{pitch}$ são ganhos estáticos que definem a velocidade de convergência da resposta à situação de equilíbrio, $\phi_{roll}$ e $\phi_{pitch}$ são os ângulos medidos de rolagem e arfagem, respectivamente, e $f_i$ é uma função linear utilizada para eliminar o ruído do sensor e pode ser positiva ou negativa, dependendo da contribuição da junta para aquela variável.

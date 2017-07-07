@@ -1,0 +1,857 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.3)  31 MAY 2017 23:03
+entering extended mode
+**./relatorio.tex
+(relatorio.tex
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\book.cls"
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\bk11.clo"
+File: bk11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2016/06/19 v1.99m Standard LaTeX package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2016/06/19 v1.99m Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2016/04/23 3.9r The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\babel-portuges\portuges.ldf"
+Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2016/04/23 3.9r Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+)
+\l@brazilian = a dialect from \language\l@portuges 
+Package babel Info: Making " an active character on input line 145.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count89
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+\epsfxsize=\dimen106
+\epsfysize=\dimen107
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip43
+\subfigcapskip=\skip44
+\subfigcaptopadj=\dimen108
+\subfigbottomskip=\skip45
+\subfigcapmargin=\dimen109
+\subfiglabelskip=\skip46
+\c@subfigure=\count90
+\c@lofdepth=\count91
+\c@subtable=\count92
+\c@lotdepth=\count93
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+("C:\Program Files\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
+\subfig@top=\skip47
+\subfig@bottom=\skip48
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2016/06/28 v2.15d AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen110
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen111
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count94
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count95
+\leftroot@=\count96
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count97
+\DOTSCASE@=\count98
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen112
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count99
+\c@MaxMatrixCols=\count100
+\dotsspace@=\muskip10
+\c@parentequation=\count101
+\dspbrk@lvl=\count102
+\tag@help=\toks17
+\row@=\count103
+\column@=\count104
+\maxfields@=\count105
+\andhelp@=\toks18
+\eqnshift@=\dimen113
+\alignsep@=\dimen114
+\tagshift@=\dimen115
+\tagwidth@=\dimen116
+\totwidth@=\dimen117
+\lineht@=\dimen118
+\@envbody=\toks19
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\ntheorem\ntheorem.sty"
+Style `ntheorem', Version 1.33 <2011/08/15>
+Package: ntheorem 2011/08/15 1.33
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\theorem@style=\toks21
+\theorem@@style=\toks22
+\theorembodyfont=\toks23
+\theoremnumbering=\toks24
+\theorempreskipamount=\skip52
+\theorempostskipamount=\skip53
+\theoremframepreskipamount=\skip54
+\theoremframepostskipamount=\skip55
+\theoreminframepreskipamount=\skip56
+\theoreminframepostskipamount=\skip57
+\theorem@preskip=\toks25
+\theorem@postskip=\toks26
+\theorem@framepreskip=\toks27
+\theorem@framepostskip=\toks28
+\theorem@inframepreskip=\toks29
+\theorem@inframepostskip=\toks30
+\theoremindent=\dimen119
+\theorem@indent=\dimen120
+\theoremrightindent=\dimen121
+\theorem@rightindent=\dimen122
+\theoremheaderfont=\toks31
+\theoremseparator=\toks32
+\theoremprework=\toks33
+\theorempostwork=\toks34
+\theoremsymbol=\toks35
+\qedsymbol=\toks36
+\theoremkeyword=\toks37
+\qedsymbol=\toks38
+\thm@topsep=\skip58
+\thm@topsepadd=\skip59
+Package ntheorem Info: Option `thmmarks' loaded on input line 1175.
+\c@endNonectr=\count106
+\c@currNonectr=\count107
+\mysavskip=\skip60
+Package ntheorem Info: option `amsmath' handling for `thmmarks' loaded on input
+ line 1175.
+\thm@amstmpdepth=\dimen123
+\tagwidth=\dimen124
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\boxedminipage\boxedminipage.sty")
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count108
+\Gm@cntv=\count109
+\c@Gm@tempcnt=\count110
+\Gm@bindingoffset=\dimen125
+\Gm@wd@mp=\dimen126
+\Gm@odd@mp=\dimen127
+\Gm@even@mp=\dimen128
+\Gm@layoutwidth=\dimen129
+\Gm@layoutheight=\dimen130
+\Gm@layouthoffset=\dimen131
+\Gm@layoutvoffset=\dimen132
+\Gm@dimlist=\toks39
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\theorem.sty")
+("C:\Program Files\MiKTeX 2.9\tex\latex\fancybox\fancybox.sty"
+Package: fancybox 2010/05/15 1.4
+
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+\@fancybox=\box28
+\shadowsize=\dimen133
+\@Sbox=\box29
+\do@VerbBox=\toks40
+\the@fancyput=\toks41
+\this@fancyput=\toks42
+\EndVerbatimTokens=\toks43
+\Verbatim@Outfile=\write3
+\Verbatim@Infile=\read1
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
+\fancy@headwidth=\skip61
+\f@ncyO@elh=\skip62
+\f@ncyO@erh=\skip63
+\f@ncyO@olh=\skip64
+\f@ncyO@orh=\skip65
+\f@ncyO@elf=\skip66
+\f@ncyO@erf=\skip67
+\f@ncyO@olf=\skip68
+\f@ncyO@orf=\skip69
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\afterpage.sty"
+Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
+\AP@output=\toks44
+\AP@partial=\box30
+\AP@footins=\box31
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen134
+\extrarowheight=\dimen135
+\NC@list=\toks45
+\extratabsurround=\skip70
+\backup@length=\skip71
+)
+\everycr=\toks46
+\minrowclearance=\skip72
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\rotating.sty"
+Package: rotating 2016/05/22 v2.16c rotated objects in LaTeX
+\c@r@tfl@t=\count111
+\rotFPtop=\skip73
+\rotFPbot=\skip74
+\rot@float@box=\box32
+\rot@mess@toks=\toks47
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\makeidx.sty"
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+) (ft2unb.sty
+Package: ft2unb 2006/03/19 v1.0
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
+Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+)))
+\@indexfile=\write4
+\openout4 = `relatorio.idx'.
+
+
+Writing index file relatorio.idx
+(relatorio.aux (resumos.aux) (simbolos.aux) (cap_Introducao.aux)
+(cap_RevisaoBibliografica.aux) (cap_Desenvolvimento.aux) (cap_Experimentos.aux)
+(cap_Conclusoes.aux) (anexo_Esquematicos.aux) (anexo_CD.aux))
+\openout1 = `relatorio.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count112
+\scratchdimen=\dimen136
+\scratchbox=\box33
+\nofMPsegments=\count113
+\nofMParguments=\count114
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count115
+\MPscratchDim=\dimen137
+\MPnumerator=\count116
+\makeMPintoPDFobject=\count117
+\everyMPtoPDFconversion=\toks49
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(66.57935pt, 464.34918pt, 66.57935pt)
+* v-part:(T,H,B)=(56.9055pt, 686.7347pt, 101.40665pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=464.34918pt
+* \textheight=686.7347pt
+* \oddsidemargin=-5.69046pt
+* \evensidemargin=-5.69046pt
+* \topmargin=-41.81825pt
+* \headheight=12.0pt
+* \headsep=14.45377pt
+* \topskip=11.0pt
+* \footskip=50.58878pt
+* \marginparwidth=53.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\AtBeginShipoutBox=\box34
+LaTeX Font Info:    Try loading font information for U+msa on input line 102.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 102.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Package epstopdf Info: Source file: <figs/capa_fundo.eps>
+(epstopdf)                    date: 2017-05-12 11:04:48
+(epstopdf)                    size: 82841 bytes
+(epstopdf)             Output file: <figs/capa_fundo-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-05-12 11:14:40
+(epstopdf)                    size: 10747 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/capa_fundo-eps-convert
+ed-to.pdf figs/capa_fundo.eps>
+(epstopdf)             \includegraphics on input line 102.
+Package epstopdf Info: Output file is already uptodate.
+
+<figs/capa_fundo-eps-converted-to.pdf, id=1, 813.0375pt x 1149.29375pt>
+File: figs/capa_fundo-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figs/capa_fundo-eps-converted-to.pdf>
+Package pdftex.def Info: figs/capa_fundo-eps-converted-to.pdf used on input lin
+e 102.
+(pdftex.def)             Requested size: 597.50787pt x 844.6594pt.
+ [1
+
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./figs/capa_fundo-eps-con
+verted-to.pdf>] [1
+
+] [1
+
+
+] [1
+
+]
+\openout2 = `resumos.aux'.
+
+
+(resumos.tex) [1
+
+] (relatorio.toc [2
+
+
+])
+\tf@toc=\write5
+\openout5 = `relatorio.toc'.
+
+ [3] (relatorio.lof)
+\tf@lof=\write6
+\openout6 = `relatorio.lof'.
+
+ [4
+
+] (relatorio.lot)
+\tf@lot=\write7
+\openout7 = `relatorio.lot'.
+
+
+[5
+
+]
+\openout2 = `simbolos.aux'.
+
+ (simbolos.tex) [6
+
+
+] [7]
+\openout2 = `cap_Introducao.aux'.
+
+ (cap_Introducao.tex
+Cap\'{\i }tulo 1.
+<Figuras/BigDog.png, id=58, 294.09875pt x 183.18437pt>
+File: Figuras/BigDog.png Graphic file (type png)
+
+<use Figuras/BigDog.png>
+Package pdftex.def Info: Figuras/BigDog.png used on input line 18.
+(pdftex.def)             Requested size: 371.48076pt x 231.38373pt.
+ <Figuras/HyQ.png, id=59, 216.30812pt x 259.97125pt>
+File: Figuras/HyQ.png Graphic file (type png)
+
+<use Figuras/HyQ.png>
+Package pdftex.def Info: Figuras/HyQ.png used on input line 28.
+(pdftex.def)             Requested size: 232.17459pt x 279.05109pt.
+ <Figuras/AIBO.jpg, id=60, 198.7425pt x 255.95625pt>
+File: Figuras/AIBO.jpg Graphic file (type jpg)
+
+<use Figuras/AIBO.jpg>
+Package pdftex.def Info: Figuras/AIBO.jpg used on input line 39.
+(pdftex.def)             Requested size: 139.30617pt x 179.41418pt.
+ [1
+
+
+
+
+] [2 <./Figuras/BigDog.png (PNG copy)>]) [3 <./Figuras/HyQ.png (PNG copy)>] [4 
+<./Figuras/AIBO.jpg>]
+\openout2 = `cap_RevisaoBibliografica.aux'.
+
+ (cap_RevisaoBibliografica.tex
+Cap\'{\i }tulo 2.
+[5
+
+
+
+] <Figuras/Poligono1.png, id=78, 155.07938pt x 81.30376pt>
+File: Figuras/Poligono1.png Graphic file (type png)
+
+<use Figuras/Poligono1.png>
+Package pdftex.def Info: Figuras/Poligono1.png used on input line 41.
+(pdftex.def)             Requested size: 162.52504pt x 85.20769pt.
+
+<Figuras/Poligono2.png, id=79, 169.13188pt x 74.77937pt>
+File: Figuras/Poligono2.png Graphic file (type png)
+
+<use Figuras/Poligono2.png>
+Package pdftex.def Info: Figuras/Poligono2.png used on input line 41.
+(pdftex.def)             Requested size: 185.73683pt x 82.12405pt.
+
+<Figuras/Poligono3.png, id=80, 208.78pt x 79.29625pt>
+File: Figuras/Poligono3.png Graphic file (type png)
+
+<use Figuras/Poligono3.png>
+Package pdftex.def Info: Figuras/Poligono3.png used on input line 43.
+(pdftex.def)             Requested size: 208.9557pt x 79.36742pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Figuras/Margemlongitudinal.png, id=81, 419.06563pt x 277.035pt>
+File: Figuras/Margemlongitudinal.png Graphic file (type png)
+
+<use Figuras/Margemlongitudinal.png>
+Package pdftex.def Info: Figuras/Margemlongitudinal.png used on input line 52.
+(pdftex.def)             Requested size: 325.043pt x 214.87744pt.
+ [6] [7 <./Figuras/Poligono1.png (PNG copy)> <./Figuras/Poligono2.png (PNG copy
+)> <./Figuras/Poligono3.png (PNG copy)>]
+[8 <./Figuras/Margemlongitudinal.png (PNG copy)>]
+<Figuras/Dinamico1.png, id=95, 472.26437pt x 227.34938pt>
+File: Figuras/Dinamico1.png Graphic file (type png)
+
+<use Figuras/Dinamico1.png>
+Package pdftex.def Info: Figuras/Dinamico1.png used on input line 96.
+(pdftex.def)             Requested size: 325.043pt x 156.47923pt.
+ [9 <./Figuras/Dinamico1.png (PNG copy)>]
+<Figuras/Dinamico2.png, id=100, 299.61937pt x 228.855pt>
+File: Figuras/Dinamico2.png Graphic file (type png)
+
+<use Figuras/Dinamico2.png>
+Package pdftex.def Info: Figuras/Dinamico2.png used on input line 135.
+(pdftex.def)             Requested size: 325.043pt x 248.29462pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Figuras/Umaperna.jpg, id=101, 321.2pt x 229.85875pt>
+File: Figuras/Umaperna.jpg Graphic file (type jpg)
+
+<use Figuras/Umaperna.jpg>
+Package pdftex.def Info: Figuras/Umaperna.jpg used on input line 142.
+(pdftex.def)             Requested size: 325.043pt x 232.61494pt.
+ [10]
+<Figuras/CGPrint.png, id=105, 367.3725pt x 185.19188pt>
+File: Figuras/CGPrint.png Graphic file (type png)
+
+<use Figuras/CGPrint.png>
+Package pdftex.def Info: Figuras/CGPrint.png used on input line 170.
+(pdftex.def)             Requested size: 325.043pt x 163.86511pt.
+ [11 <./Figuras/Dinamico2.png (PNG copy)>] [12 <./Figuras/Umaperna.jpg> <./Figu
+ras/CGPrint.png (PNG copy)>]
+<Figuras/PernasVirtuais.png, id=112, 341.275pt x 100.87688pt>
+File: Figuras/PernasVirtuais.png Graphic file (type png)
+
+<use Figuras/PernasVirtuais.png>
+Package pdftex.def Info: Figuras/PernasVirtuais.png used on input line 189.
+(pdftex.def)             Requested size: 325.043pt x 96.08492pt.
+
+<Figuras/PernasVirtuais2.png, id=113, 284.56313pt x 183.68625pt>
+File: Figuras/PernasVirtuais2.png Graphic file (type png)
+
+<use Figuras/PernasVirtuais2.png>
+Package pdftex.def Info: Figuras/PernasVirtuais2.png used on input line 198.
+(pdftex.def)             Requested size: 325.043pt x 209.8389pt.
+ [13 <./Figuras/PernasVirtuais.png (PNG copy)>] <Figuras/SLIP.png, id=117, 345.
+29pt x 311.66437pt>
+File: Figuras/SLIP.png Graphic file (type png)
+ <use Figuras/SLIP.png>
+Package pdftex.def Info: Figuras/SLIP.png used on input line 227.
+(pdftex.def)             Requested size: 325.043pt x 293.39255pt.
+
+[14 <./Figuras/PernasVirtuais2.png (PNG copy)>]
+<Figuras/SLIP2.png, id=122, 132.495pt x 176.15813pt>
+File: Figuras/SLIP2.png Graphic file (type png)
+ <use Figuras/SLIP2.png>
+Package pdftex.def Info: Figuras/SLIP2.png used on input line 243.
+(pdftex.def)             Requested size: 139.30617pt x 185.22684pt.
+
+[15 <./Figuras/SLIP.png (PNG copy)>]
+<Figuras/SLIP3.png, id=126, 324.21124pt x 205.76875pt>
+File: Figuras/SLIP3.png Graphic file (type png)
+ <use Figuras/SLIP3.png>
+Package pdftex.def Info: Figuras/SLIP3.png used on input line 284.
+(pdftex.def)             Requested size: 325.043pt x 206.30827pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16 <./Figuras/SLIP2.png (PNG copy)>]
+<Figuras/Balanco1.png, id=130, 301.125pt x 197.23688pt>
+File: Figuras/Balanco1.png Graphic file (type png)
+
+<use Figuras/Balanco1.png>
+Package pdftex.def Info: Figuras/Balanco1.png used on input line 297.
+(pdftex.def)             Requested size: 325.043pt x 212.92233pt.
+ [17 <./Figuras/SLIP3.png (PNG copy)>]
+<Figuras/Balanco2.png, id=134, 292.09125pt x 214.30063pt>
+File: Figuras/Balanco2.png Graphic file (type png)
+
+<use Figuras/Balanco2.png>
+Package pdftex.def Info: Figuras/Balanco2.png used on input line 333.
+(pdftex.def)             Requested size: 325.043pt x 238.49779pt.
+
+<Figuras/Balanco3.png, id=135, 330.73563pt x 136.00812pt>
+File: Figuras/Balanco3.png Graphic file (type png)
+
+<use Figuras/Balanco3.png>
+Package pdftex.def Info: Figuras/Balanco3.png used on input line 341.
+(pdftex.def)             Requested size: 325.043pt x 133.67305pt.
+ [18 <./Figuras/Balanco1.png (PNG copy)> <./Figuras/Balanco2.png (PNG copy)>] <
+Figuras/LAR.png, id=139, 359.3425pt x 88.33pt>
+File: Figuras/LAR.png Graphic file (type png)
+
+<use Figuras/LAR.png>
+Package pdftex.def Info: Figuras/LAR.png used on input line 353.
+(pdftex.def)             Requested size: 325.043pt x 79.90463pt.
+ <Figuras/LAR2.png, id=140, 365.365pt x 108.405pt>
+File: Figuras/LAR2.png Graphic file (type png)
+
+<use Figuras/LAR2.png>
+Package pdftex.def Info: Figuras/LAR2.png used on input line 362.
+(pdftex.def)             Requested size: 325.043pt x 96.44539pt.
+ [19 <./Figuras/Balanco3.png (PNG copy)>]
+<Figuras/LAR3.png, id=144, 355.82938pt x 116.93687pt>
+File: Figuras/LAR3.png Graphic file (type png)
+ <use Figuras/LAR3.png>
+Package pdftex.def Info: Figuras/LAR3.png used on input line 388.
+(pdftex.def)             Requested size: 325.043pt x 106.82309pt.
+
+<Figuras/LAR4a.png, id=145, 371.3875pt x 266.9975pt>
+File: Figuras/LAR4a.png Graphic file (type png)
+ <use Figuras/LAR4a.png>
+Package pdftex.def Info: Figuras/LAR4a.png used on input line 397.
+(pdftex.def)             Requested size: 162.52504pt x 116.84369pt.
+
+<Figuras/LAR4b.png, id=146, 373.89688pt x 278.03876pt>
+File: Figuras/LAR4b.png Graphic file (type png)
+ <use Figuras/LAR4b.png>
+Package pdftex.def Info: Figuras/LAR4b.png used on input line 397.
+(pdftex.def)             Requested size: 148.59514pt x 110.49654pt.
+
+[20 <./Figuras/LAR.png (PNG copy)> <./Figuras/LAR2.png (PNG copy)>]
+<Figuras/LAR5.png, id=151, 265.99374pt x 275.52937pt>
+File: Figuras/LAR5.png Graphic file (type png)
+ <use Figuras/LAR5.png>
+Package pdftex.def Info: Figuras/LAR5.png used on input line 423.
+(pdftex.def)             Requested size: 232.17459pt x 240.5032pt.
+
+[21 <./Figuras/LAR3.png (PNG copy)> <./Figuras/LAR4a.png (PNG copy)> <./Figuras
+/LAR4b.png (PNG copy)>] [22 <./Figuras/LAR5.png (PNG copy)>] [23] [24]
+<Figuras/ganho1.jpg, id=166, 246.9225pt x 243.40938pt>
+File: Figuras/ganho1.jpg Graphic file (type jpg)
+
+<use Figuras/ganho1.jpg>
+Package pdftex.def Info: Figuras/ganho1.jpg used on input line 558.
+(pdftex.def)             Requested size: 232.17459pt x 228.86797pt.
+ [25]
+<Figuras/quadrupededof.jpg, id=170, 314.67563pt x 282.55562pt>
+File: Figuras/quadrupededof.jpg Graphic file (type jpg)
+
+<use Figuras/quadrupededof.jpg>
+Package pdftex.def Info: Figuras/quadrupededof.jpg used on input line 580.
+(pdftex.def)             Requested size: 232.17459pt x 208.47565pt.
+
+<Figuras/realimentacao.jpg, id=171, 277.53688pt x 111.41624pt>
+File: Figuras/realimentacao.jpg Graphic file (type jpg)
+
+<use Figuras/realimentacao.jpg>
+Package pdftex.def Info: Figuras/realimentacao.jpg used on input line 589.
+(pdftex.def)             Requested size: 232.17459pt x 93.20648pt.
+
+<Figuras/pernaredundante.jpg, id=172, 242.40562pt x 178.16562pt>
+File: Figuras/pernaredundante.jpg Graphic file (type jpg)
+
+<use Figuras/pernaredundante.jpg>
+Package pdftex.def Info: Figuras/pernaredundante.jpg used on input line 598.
+(pdftex.def)             Requested size: 232.17459pt x 170.65372pt.
+ [26 <./Figuras/ganho1.jpg>] [27 <./Figuras/quadrupededof.jpg> <./Figuras/reali
+mentacao.jpg>] [28 <./Figuras/pernaredundante.jpg>] <Figuras/respostassensoriai
+s.jpg, id=183, 297.11pt x 110.91437pt>
+File: Figuras/respostassensoriais.jpg Graphic file (type jpg)
+
+<use Figuras/respostassensoriais.jpg>
+Package pdftex.def Info: Figuras/respostassensoriais.jpg used on input line 647
+.
+(pdftex.def)             Requested size: 232.17459pt x 86.677pt.
+) [29 <./Figuras/respostassensoriais.jpg>]
+\openout2 = `cap_Desenvolvimento.aux'.
+
+(cap_Desenvolvimento.tex
+Cap\'{\i }tulo 3.
+[30
+
+
+
+]) [31]
+\openout2 = `cap_Experimentos.aux'.
+
+ (cap_Experimentos.tex
+Cap\'{\i }tulo 4.
+) [32
+
+
+
+] [33]
+\openout2 = `cap_Conclusoes.aux'.
+
+ (cap_Conclusoes.tex
+Cap\'{\i }tulo 5.
+) [34
+
+
+
+] (relatorio.bbl) [35
+
+
+]
+\c@noAnexo=\count118
+ [36
+
+]
+\openout2 = `anexo_Esquematicos.aux'.
+
+ (anexo_Esquematicos.tex
+ANEXO I.
+) [37
+
+
+]
+\openout2 = `anexo_CD.aux'.
+
+ (anexo_CD.tex
+ANEXO II.
+) [38
+
+
+
+]
+\tf@thm=\write8
+\openout8 = `relatorio.thm'.
+
+ (relatorio.aux (resumos.aux) (simbolos.aux) (cap_Introducao.aux)
+(cap_RevisaoBibliografica.aux) (cap_Desenvolvimento.aux) (cap_Experimentos.aux)
+(cap_Conclusoes.aux) (anexo_Esquematicos.aux) (anexo_CD.aux)) ) 
+Here is how much of TeX's memory you used:
+ 5306 strings out of 493334
+ 71703 string characters out of 3139252
+ 153773 words of memory out of 3000000
+ 8569 multiletter control sequences out of 15000+200000
+ 28069 words of font info for 71 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 40i,14n,43p,990b,327s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\bruno
+\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\U
+sers\bruno\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0600
+.pk> <C:\Users\bruno\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
+0\ecrm0800.pk> <C:\Users\bruno\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
+n\ec\dpi600\ecrm0900.pk> <C:\Users\bruno\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
+ur\jknappen\ec\dpi600\ecbx2074.pk> <C:\Users\bruno\AppData\Local\MiKTeX\2.9\fon
+ts\pk\ljfour\jknappen\ec\dpi600\eccc1095.pk> <C:\Users\bruno\AppData\Local\MiKT
+eX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc1095.pk> <C:\Users\bruno\AppData\
+Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\brun
+o\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\
+Users\bruno\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti109
+5.pk> <C:\Users\bruno\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi6
+00\ecti1000.pk> <C:\Users\bruno\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknapp
+en\ec\dpi600\ecrm1000.pk> <C:\Users\bruno\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
+our\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\bruno\AppData\Local\MiKTeX\2.9\fo
+nts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\bruno\AppData\Local\MiK
+TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\Users\bruno\AppData
+\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\bru
+no\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:
+\Users\bruno\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm14
+40.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on relatorio.pdf (49 pages, 2855475 bytes).
+PDF statistics:
+ 963 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
+

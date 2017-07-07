@@ -1,0 +1,93 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{1.42.2.1 }
+
+\bibitem{article:raibert:0000}
+\abntrefinfo{Raibert et al.}{RAIBERT et al.}{}
+{RAIBERT, M. et al. Bigdog, the rough-terrain quaduped robot.
+\emph{Boston Dynamics}.}
+
+\bibitem{article:li:2014}
+\abntrefinfo{Li et al.}{LI et al.}{2014}
+{LI, M. et al. Control of a quadruped robot with bionic springy legs in
+  trotting gait.
+\emph{Journal of Bionic Engineering}, v.~11, n.~2, p. 188--198, 2014.}
+
+\bibitem{article:semini:2011}
+\abntrefinfo{Semini et al.}{SEMINI et al.}{2011}
+{SEMINI, C. et al. Design of hyq - a hydraulically and electrically actuated
+  quadruped robot.
+\emph{Journal of Systems and Control Engineering}, v.~225, p. 831--849, August
+  2011.}
+
+\bibitem{site:hyq}
+\abntrefinfo{http\ldots}{HTTP\ldots}{2014}
+{HTTP://OLD.IIT.IT/EN/DLS-ROBOTS/HYQ-ROBOT.HTML.
+June 2014.}
+
+\bibitem{article:sousa:2010}
+\abntrefinfo{Sousa, Matos e Santos}{SOUSA; MATOS; SANTOS}{2010}
+{SOUSA, J.; MATOS, V.; SANTOS, C.~P. dos. A bio-inspired postural control for a
+  quadruped robot: an attractor-based dynamics.
+\emph{IEEE/RSJ International Conference on Intelligent Robots and Systems}, p.
+  5329--5334, October 2010.}
+
+\bibitem{article:mcghee:1968}
+\abntrefinfo{McGhee e Frank}{MCGHEE; FRANK}{1968}
+{MCGHEE, R.~B.; FRANK, A.~A. On the stability properties of quadruped creeping
+  gaits.
+\emph{Mathematical Biosciences}, v.~3, p. 331--351, 1968.}
+
+\bibitem{tcc:santos:2016}
+\abntrefinfo{Santos}{SANTOS}{2016}
+{SANTOS, J. H.~S. Plataforma quadrupede: Uma nova estrutura para robo
+  quadrupede do lara.
+July 2016.}
+
+\bibitem{book}
+\abntrefinfo{Santos, Garcia e Estremera}{SANTOS; GARCIA; ESTREMERA}{2007}
+{SANTOS, P.~G. de; GARCIA, E.; ESTREMERA, J. \emph{Quadrupedal Locomotion: an
+  introduction to the control of four-legged robots}. Berlin, Germany:
+  Springer, 2007.}
+
+\bibitem{article:raibert:1986}
+\abntrefinfo{Raibert, Chepponis e Brown}{RAIBERT; CHEPPONIS; BROWN}{1986}
+{RAIBERT, M.~H.; CHEPPONIS, M.; BROWN, H.~B. Running on four legs as though
+  they were one.
+\emph{IEEE Journal of Robotics and Automation}, RA-2, n.~2, p. 70--82, June
+  1986.}
+
+\bibitem{article:meng:2015}
+\abntrefinfo{Meng, Li e Li}{MENG; LI; LI}{2015}
+{MENG, J.; LI, Y.; LI, B. A dynamic balancing approach for a quadruped robot
+  supported by diagonal legs.
+\emph{International Journal of Advanced Robotic Systems}, v.~12, n.~142, 2015.}
+
+\bibitem{article:won:2009}
+\abntrefinfo{Won, Kang e Chung}{WON; KANG; CHUNG}{2009}
+{WON, M.; KANG, T.~H.; CHUNG, W.~K. Gait planning for quadruped robot based on
+  dynamic stability: landing accordance ratio.
+\emph{Intel Serv Robotics}, v.~2, p. 105--112, March 2009.}
+
+\bibitem{tcc:souto:2007}
+\abntrefinfo{Souto}{SOUTO}{2007}
+{SOUTO, R.~F. Modelagem cinemática de um robô quadrúpede e geração de seus
+  movimentos usando filtragem estocástica.
+Julho 2007.}
+
+\bibitem{article:featherstone:2016}
+\abntrefinfo{Featherstone}{FEATHERSTONE}{2016}
+{FEATHERSTONE, R. Quantitative measures of a robot’s physical ability to
+  balance.
+\emph{The International Journal of Robotics Research}, v.~35, n.~14, p.
+  1681--1696, 2016.}
+
+\bibitem{article:runbin:2013}
+\abntrefinfo{RunBin et al.}{RUNBIN et al.}{2013}
+{RUNBIN, C. et al. Inverse kinematics of a new quadruped robot control method.
+\emph{International Journal of Advanced Robotic Systems}, v.~10, n.~46, 2013.}
+
+\end{thebibliography}

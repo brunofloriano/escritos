@@ -1,0 +1,67 @@
+%TCIDATA{LaTeXparent=0,0,relatorio.tex}
+                      
+\chapter{Introdução}\label{CapIntro}
+
+% Resumo opcional. Comentar se não usar.
+\resumodocapitulo{Este capítulo apresenta a principal motivação do trabalho de graduação. Os objetivos são claramente apresentados, visando assim satisfazer um conjunto de características prescritas para este trabalho. Por fim, o manuscrito é apresentado. (Este resumo é opcional)}
+
+\section{Contextualização}
+
+%Em geral, na introdução que é feita a contextualização do trabalho. Aspectos importantes tais como motivação e relevância do tema escolhido devem ficar claros.
+
+Nas últimas décadas, o estudo e desenvolvimento de robôs com patas, especialmente de quadrúpedes, tem avançado consideravelmente. Devido às sua características bio-inspiradas, estes veículos apresentam alta mobilidade em terrenos irregulares, manejam obstáculos e podem se locomover em superfícies inclinadas tornando-os uma alternativa mais eficaz para a exploração e navegação de diversos terrenos quando comparados com veículos movidos a rodas, por exemplo \cite{article:raibert:0000, article:li:2014}. Isso faz com que estes robôs possam ser utilizados em diversas aplicações.
+
+Neste sentido, os robôs quadrúpedes podem, por exemplo, ser amplamente utilizados no transporte de cargas, devido à possibilidade de distribuição de peso em suas pernas de suporte. Dentre outros, este é um dos objetivos do desenvolvimento de alguns destes robôs por parte da empresa norte-americana Boston Dynamics, desenvolvedora do \emph{BigDog}, um robô quadrúpede criado para a locomoção em diversos terrenos, incluindo solos irregulares e superfícies inclinadas, capaz de suportar até 154 kg em terrenos horizontais \cite{article:raibert:0000}. Na Figura \ref{fig:bigdog} podemos ver o \emph{BigDog} se locomovendo sobre uma superfície com neve e inclinada.
+
+\begin{figure} [t]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figuras/BigDog}
+	\caption{Robô quadrúpede \emph{BigDog} desenvolvido pela empresa Boston Dynamics}
+	\label{fig:bigdog}
+\end{figure}
+
+
+Outra possível aplicação desta tecnologia é a substituição de seres humanos em atividades de risco tais como busca e resgate, construção, recuperação de ambientes em que houve desastre e exploração de ambientes inóspitos ou de difícil acesso. Estes são alguns objetivos traçados pelo Instituto Italiano de Tecnologia (Istituto Italiano di Tecnologia) no desenvolvimento do HyQ, um robô quadrúpede com atuadores hidráulicos e elétricos \cite{article:semini:2011, site:hyq}. A Figura \ref{fig:hyq} mostra tal robô construido.
+
+\begin{figure} [t]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figuras/HyQ}
+	\caption{Robô quadrúpede HyQ}
+	\label{fig:hyq}
+\end{figure}
+
+
+
+Por fim, os quadrúpedes podem, ainda, ter como finalidade o entretenimento. Robôs como o AIBO, desenvolvido pela empresa japonesa Sony, são animais de estimação virtuais que visam o lazer \cite{article:sousa:2010}. Podemos observar uma imagem do AIBO na Figura \ref{fig:aibo}.
+
+\begin{figure} [t]
+	\centering
+	\includegraphics[width=0.3\textwidth]{Figuras/AIBO}
+	\caption{Robô quadrúpede de entretenimento AIBO da Sony}
+	\label{fig:aibo}
+\end{figure}
+
+
+Porém, para que um robô quadrúpede possa desenvolver as aplicações acima mencionadas, cumprindo os requisitos de suas funções, é necessário que, além de conseguir se movimentar de forma não cadenciada, isto é, garantindo um movimento contínuo, ele mantenha o equilíbrio de seu corpo, evitando o tombamento e garantindo a estabilidade. Dessa forma, manter a estabilidade permite que o sistema seja robusto contra distúrbios externos como empurrões ou ventos e contra irregulares no terreno como buracos e rugosidades.
+
+Justamente pela importância da análise de estabilidade em robôs quadrúpedes que seu estudo começou logo em 1968 com os trabalhos de McGhee e Frank \cite{article:mcghee:1968} sobre estabilidade estática e vêm se estendendo até os dias atuais com novos modelos e experimentos para análise de como robôs quadrúpedes podem se manter estáveis ainda que em alta velocidade ou em terrenos irregulares.
+
+\section{Definição do problema}
+%Aqui o problema é definido.
+
+Desde 2005, alunos e professores de Engenharia Elétrica e de Engenharia Mecatrônica da Universidade de Brasília (UnB) vêm desenvolvendo e aprimorando uma plataforma quadrúpede no Laboratório de Robótica e Automação (LARA). Desde então, várias abordagens já foram trabalhadas na plataforma, passando por diversas modificações em seus componentes \cite{tcc:santos:2016}. Contudo, pouco foi trabalhada a questão referente ao controle de estabilidade do robô.
+
+
+\section{Objetivos do projeto}
+%Nesta seção, deve-se deixar claro quais são os objetivos do projeto.
+
+Atualmente a plataforma quadrúpede do LARA apresenta um movimento balístico satisfatório, desenvolvido por Porphirio e Santana \cite{}, isto é, o robô apresenta capacidade de se locomover de forma não cadenciada, mas não possui um sistema de controle de equilíbrio que permita a este manter-se estável com a aplicação de distúrbios externos.
+
+Dessa forma, os objetivos deste trabalho são desenvolver um sistema de equilíbrio para a plataforma quadrúpede baseada nas leituras do acelerômetro disponível no robô, implementá-lo em seu sistema embarcado e realizar experimentos para verificar a resposta ao distúrbio.
+
+\section{Apresentação do manuscrito}
+
+No capítulo \ref{CapRevisaoBibliografica} é feita uma revisão bibliográfica sobre o tema de estudo. Em seguida, o capítulo \ref{CapDesenvolvimento} descreve a metodologia empregada no desenvolvimento do projeto. Resultados experimentais são discutidos no capítulo \ref{CapExperimentos}, seguido das conclusões no capítulo \ref{CapConclusoes}. Os anexos contém material complementar.
+
+ 
+
